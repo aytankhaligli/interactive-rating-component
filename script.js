@@ -1,12 +1,25 @@
 "use strict";
-// const title = document.querySelector("h1");
-// // title.textContent = "Thank you!";
+const thanks = document.querySelector(".thanks-container");
+const rate = document.querySelector(".container");
+const text = document.querySelector(".rate");
+const button = document.querySelectorAll(".number");
+const submit = document.querySelector(".submit");
+const error = document.querySelector(".error");
 
-// const button = document.querySelectorAll(".number");
-// const activebtn = function (i) {
-//   for (let i = 0; i < button.length; i++) {
-//     button[i].style.backgroundColor = "hsl(25, 97%, 53%)";
-//     button[i].style.color = "white";
-//   }
-// };
-// button[i].addEventListener("click", activebtn(i));
+let selectedNote;
+
+button.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    selectedNote = btn.textContent;
+  });
+});
+
+submit.addEventListener("click", () => {
+  if (!selectedNote) {
+    error.classList.remove("hidden");
+  } else {
+    thanks.classList.remove("hidden");
+    rate.classList.add("hidden");
+    text.textContent = `You selected ${selectedNote} out of 5`;
+  }
+});

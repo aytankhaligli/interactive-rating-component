@@ -80,7 +80,7 @@ p {
   background-color: hsl(217, 12%, 63%);
   color: white;
 }
-.number:active {
+.number:focus {
   color: white;
   background-color: hsl(25, 97%, 53%);
 }
@@ -127,4 +127,8 @@ img {
 }
 .hidden {
   display: none;
+}
+.error {
+  color: brown;
+  text-align: center;
 }
